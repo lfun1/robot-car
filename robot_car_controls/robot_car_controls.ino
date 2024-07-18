@@ -57,10 +57,11 @@ void setup() {
   pinMode(motor2pin2, OUTPUT);
 
   // Setup NodeMCU Soft Access Point
+  // Connect to access point and visit http://192.168.4.1 in a web browser
   WiFi.softAP(ssid, password);
   Serial.println("Access Point Started");
   Serial.print("IP Address: ");
-  Serial.println(WiFi.softAPIP());
+  Serial.println(WiFi.softAPIP());  // 192.168.4.1
 
   // Configure web page
   server.on("/", []() {
